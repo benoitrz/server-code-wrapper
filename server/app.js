@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const port = 3070;
 
 const context = {
-  MongoClient: MongoClient
+    MongoClient: MongoClient,
 };
 
 const vm2 = new NodeVM({
@@ -21,7 +21,7 @@ app.post('/run', (req, res) => {
     let executedClientCode = vm2.run(req.body.method);
     executedClientCode((result) => {
         res.send(result);
-	});
+    });
 })
 
 app.listen(port, () => {

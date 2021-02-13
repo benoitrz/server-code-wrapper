@@ -1,14 +1,16 @@
 serverCodeWrapper = (method, callback) => {
-	const xhr = new XMLHttpRequest();
-	xhr.open('POST', 'http://localhost:3070/run', true);
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.onreadystatechange = () => {
-	    if (xhr.readyState === 4 && xhr.status === 200) {
-	        callback(xhr.response);
-	    }
-	};
-	const body = JSON.stringify({
-		'method': 'module.exports = ' + method.toString() + ';'
-	});
-	xhr.send(body);
+	fetch('http://localhost:3070/run', {
+		method: 'post',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			'method': 'module.exports = ' + method.toString() + ';'
+		}),
+	  })
+	  .then(response => response.json())
+	  .then((jsonData) => {
+			callback(jsonData);
+	  });
 }; 
