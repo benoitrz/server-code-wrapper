@@ -1,0 +1,19 @@
+{
+  "name": "server-code-wrapper",
+  "version": "1.0.0",
+  "description": "POC of running client code in the server, like querying a database.",
+  "scripts": {
+    "start": "node ./server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benoit Trzpit",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "mongodb": "^3.6.4",
+    "vm2": "^3.8.4"
+  }
+}
