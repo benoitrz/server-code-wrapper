@@ -1,4 +1,4 @@
-const callMongoDbDatabase = (callback) => {
+const queryMongo = (callback) => {
 	MongoClient.connect('mongodb://localhost:27017', (err, client) => {
 	  if (err) throw err;
 	  const db = client.db('test');
@@ -10,6 +10,6 @@ const callMongoDbDatabase = (callback) => {
 	});
 }
 
-serverCodeWrapper(callMongoDbDatabase, (result) => {
+serverCodeWrapper(queryMongo, (result) => {
 	console.log(result);
 });

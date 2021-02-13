@@ -1,7 +1,7 @@
 {
   "name": "server-code-wrapper",
   "version": "1.0.0",
-  "description": "POC of running client code in the server, like querying a database.",
+  "description": "POC of including server-side code querying a database inside client-side javascript.",
   "scripts": {
     "start": "node ./server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
